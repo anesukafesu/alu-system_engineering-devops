@@ -1,10 +1,7 @@
-# Puppet script to auto-configure some connection options to my server
-include ssh::client
-class { 'ssh::client':
-  ssh_config => {
-    'Host' => '34.234.88.145',
-    'IdentityFile' => '~/.ssh/school',
-    'PreferredAuthentications' => 'publickey',
-    'PasswordAuthentication' => 'no',
-  },
+#!/usr/bin/env bash
+#don't use any password
+exec { 'echo':
+  path    => 'usr/bin:/bin',
+  command => 'echo "    IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> /etc/ssh/ssh_config',
+  returns => [0,1],
 }
