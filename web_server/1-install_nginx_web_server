@@ -5,7 +5,7 @@
 sudo apt-get -y nginx
 
 # Altering the server config to create a server
-echo """
+sudo echo """
 http {
 	server {
 		listen 80;
@@ -15,4 +15,4 @@ http {
 """ > /etc/nginx/nginx.conf
 
 # Restarting the server with the new config
-nginx -s reload
+sudo nginx -s reload
