@@ -9,7 +9,7 @@ echo """
 http {
 	server {
 		listen 80;
-		return 200 "Holberton School";
+		return 200 \"Holberton School\";
 	}
 }
 """ > /etc/nginx/nginx.conf
