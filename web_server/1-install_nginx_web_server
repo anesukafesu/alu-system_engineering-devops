@@ -5,14 +5,14 @@
 sudo apt-get -y nginx
 
 # Altering the server config to create a server
-echo "
+echo """
 http {
 	server {
 		listen 80;
 		return 200 \"Holberton School\";
 	}
 }
-"  | sudo tee /etc/nginx/nginx.conf
+"""  | sudo tee /etc/nginx/nginx.conf
 
 # Restarting the server with the new config
 nginx -s reload
