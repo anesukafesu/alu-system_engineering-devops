@@ -12,7 +12,7 @@ http {
 		return 200 \"Holberton School\";
 	}
 }
-" > /etc/nginx/nginx.conf
+"  | sudo tee /etc/nginx/nginx.conf
 
 # Restarting the server with the new config
 nginx -s reload
