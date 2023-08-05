@@ -15,4 +15,4 @@ http {
 """ > /etc/nginx/nginx.conf
 
 # Restarting the server with the new config
-sudo nginx -s reload
+nginx -s reload
