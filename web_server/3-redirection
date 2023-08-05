@@ -8,11 +8,16 @@ sudo apt update && sudo apt upgrade
 sudo apt install nginx -y
 
 # Write data to nginx.conf
-printf %s "http {
+printf %s "
+events {
+
+}
+
+http {
 	server {
 		listen 80;
 		location = /redirect_me {
-			return 301 https://google.com
+			return 301 https://google.com;
 		}
 		return 200 \"Holberton School\";
 	}
