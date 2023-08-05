@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Installing nginx on a server and configuring a simple server
 
-# Installing the server
+# Installing nginx
 sudo apt-get -y nginx
 
 # Altering the server config to create a server
