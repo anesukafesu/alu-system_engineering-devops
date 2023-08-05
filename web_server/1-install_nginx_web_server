@@ -6,6 +6,10 @@ sudo apt-get -y nginx
 
 # Altering the server config to create a server
 echo """
+events {
+
+}
+
 http {
 	server {
 		listen 80;
