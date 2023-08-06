@@ -19,6 +19,7 @@ events {
 http {
 	server {
 		listen 80;
+		index index.html;
 		root /var/www/html;
 	}
 }
