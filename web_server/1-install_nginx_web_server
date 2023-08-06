@@ -2,7 +2,7 @@
 # Installing nginx on a server and configuring a simple server
 
 # Updating packages
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Installing nginx
 sudo apt-get install nginx -y
