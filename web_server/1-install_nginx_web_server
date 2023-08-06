@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # Installing nginx on a server and configuring a simple server
 
+# Updating packages
+sudo apt update && sudo apt upgrade
+
 # Installing nginx
 sudo apt install nginx -y
+
+# Creating an index html file
+echo "Holberton School" | sudo tee /var/www/html/index.html
 
 # Altering the server config to create a server
 echo "
@@ -13,9 +19,7 @@ events {
 http {
 	server {
 		listen 80;
-		location =/ {
-			return 200 'Holberton School';
-		}
+		root /var/www/html;
 	}
 }
 "  | sudo tee /etc/nginx/nginx.conf
