@@ -27,7 +27,7 @@ http {
 
 		error_page 404 /404.html;
 
-		add_header X-Served-By \$host;
+		add_header X-Served-By \$hostname;
 
 		location /redirect_me {
 			return 301 https://google.com;
