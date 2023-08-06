@@ -2,10 +2,10 @@
 # Creating a server with a redirect
 
 # Updating all packages
-sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt update && sudo apt upgrade
 
 # Install Nginx
-sudo apt-get install nginx -y
+sudo apt install nginx -y
 
 # Creating an index page
 echo "Holberton School" | sudo tee /var/www/html/index.html
@@ -25,8 +25,15 @@ http {
 		location =/redirect_me {
 			return 301 https://google.com;
 		}
+
+		try_files $uri $uri/ /not_found;
+
+		/not_found {
+			return 404 'Not found'
+		}
 	}
 }" | sudo tee /etc/nginx/nginx.conf
 
 # Reload nginx
-sudo service nginx restart
+sudo nginx -s reload
+		
