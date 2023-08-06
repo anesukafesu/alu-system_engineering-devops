@@ -13,7 +13,7 @@ events {
 http {
 	server {
 		listen 80;
-		return 200 \"Holberton School\";
+		return 200 \"Holberton School is now ALU BSE \";
 	}
 }
 "  | sudo tee /etc/nginx/nginx.conf
