@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
-# Adding a redirect
-
-# Update all packages
-sudo apt update && sudo apt upgrade
+# Adding a redirec
 
 # Install Nginx
 sudo apt install nginx -y
 
 # Write data to nginx.conf
-printf %s "
+echo "
 events {
 
 }
@@ -16,10 +13,13 @@ events {
 http {
 	server {
 		listen 80;
-		location = /redirect_me {
+		location =/redirect_me {
 			return 301 https://google.com;
 		}
-		return 200 \"Holberton School\";
+		
+		location =/ {
+			return 200 \"Holberton School\";
+		}
 	}
 }" | sudo tee /etc/nginx/nginx.conf
 
