@@ -29,5 +29,5 @@ http {
 }" | sudo tee /etc/nginx/nginx.conf
 
 # Reload nginx
-sudo nginx -s reload
+sudo service nginx restart
 		
