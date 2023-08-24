@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Log into the user provided as the first argument
+# Print who the person is
+su $1
+whoami
